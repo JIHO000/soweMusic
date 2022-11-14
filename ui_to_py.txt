@@ -1,0 +1,2 @@
+pyuic5 -x C:\UI\sowe\soweMusic.ui -o C:\UI\sowe\soweMusic.py
+pyrcc5 C:\UI\sowe\resources.qrc -o C:\UI\sowe\resources_rc.py
