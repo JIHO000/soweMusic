@@ -1,0 +1,2 @@
+pyuic5 -x C:\UI\sowe\login.ui -o C:\UI\sowe\login.py
+pyrcc5 C:\UI\sowe\resources_login.qrc -o C:\UI\sowe\resources_login.py

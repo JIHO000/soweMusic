@@ -1,0 +1,31 @@
+{
+    "QMainWindow":[
+		{
+
+			"frameless": true,
+			"transluscentBg": true,
+            "sizeGrip": "loginSizeGrip",
+			"navigation":[
+				{
+					"close": "pushButton_6"
+				}
+			]
+		}
+	],
+    "QStackedWidget":[
+		{
+			"name":"loginPages",
+			"navigation":[
+				{
+					"navigationButtons":[
+						{
+							"createBtn": "createPage",
+                            "goToLoginBtn": "loginPage"
+						}
+					]
+				}
+			]
+	
+		}
+    ]
+}
