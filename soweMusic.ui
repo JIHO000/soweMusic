@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1600</width>
+    <height>1189</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -37,7 +37,7 @@
 }
 #frame_4, #frame_8{
 	background-color:#F8DE7E;
-	border-radius:10px;
+
 }
 #centerMenuContainer{
 	background-color:#FFE482;
@@ -53,7 +53,30 @@
 #rightLoginSubContainer{
 	background-color:#FFE482;
 }
-
+#comboBox, #lineEdit{
+	border: 1px solid;
+	border-radius: 4px;
+	padding-left:10px
+}
+#comboBox::drop-down{
+	border: 0px
+}
+#comboBox::down-arrow{
+	width: 12px;
+	height: 12px;
+	margin-right: 15px;
+}
+#comboBox QListView{
+	font-size:12px;
+	border: 1px solid rgba(0,0,0,10%);
+	padding: 5px;
+	background-color:#fff;
+	outline:0px;
+}
+#comboBox QListView::item{
+	padding-left:10px;
+	background-color:#fff;
+}
 </string>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -75,6 +98,12 @@
     </property>
     <item alignment="Qt::AlignLeft">
      <widget class="QCustomSlideMenu" name="leftMenuContainer" native="true">
+      <property name="minimumSize">
+       <size>
+        <width>300</width>
+        <height>0</height>
+       </size>
+      </property>
       <property name="maximumSize">
        <size>
         <width>16777215</width>
@@ -99,6 +128,12 @@
        </property>
        <item>
         <widget class="QWidget" name="leftMenuSubContainer" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -123,6 +158,12 @@
           </property>
           <item alignment="Qt::AlignTop">
            <widget class="QFrame" name="frame">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
             </property>
@@ -147,6 +188,11 @@
              </property>
              <item>
               <widget class="QPushButton" name="menuBtn">
+               <property name="font">
+                <font>
+                 <pointsize>18</pointsize>
+                </font>
+               </property>
                <property name="toolTip">
                 <string>Menu</string>
                </property>
@@ -159,8 +205,8 @@
                </property>
                <property name="iconSize">
                 <size>
-                 <width>24</width>
-                 <height>24</height>
+                 <width>48</width>
+                 <height>48</height>
                 </size>
                </property>
               </widget>
@@ -200,26 +246,33 @@
              </property>
              <item>
               <widget class="QPushButton" name="homeBtn">
-               <property name="toolTip">
-                <string>Home</string>
+               <property name="font">
+                <font>
+                 <pointsize>18</pointsize>
+                </font>
                </property>
                <property name="text">
                 <string>Home</string>
                </property>
                <property name="icon">
                 <iconset resource="resources.qrc">
-                 <normaloff>:/icons/icons/home.svg</normaloff>:/icons/icons/home.svg</iconset>
+                 <normaloff>:/Icons/icons/home.svg</normaloff>:/Icons/icons/home.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
-                 <width>24</width>
-                 <height>24</height>
+                 <width>48</width>
+                 <height>48</height>
                 </size>
                </property>
               </widget>
              </item>
              <item>
               <widget class="QPushButton" name="top100Btn">
+               <property name="font">
+                <font>
+                 <pointsize>18</pointsize>
+                </font>
+               </property>
                <property name="toolTip">
                 <string>top 100</string>
                </property>
@@ -232,14 +285,19 @@
                </property>
                <property name="iconSize">
                 <size>
-                 <width>24</width>
-                 <height>24</height>
+                 <width>48</width>
+                 <height>48</height>
                 </size>
                </property>
               </widget>
              </item>
              <item>
               <widget class="QPushButton" name="recommendListBtn">
+               <property name="font">
+                <font>
+                 <pointsize>18</pointsize>
+                </font>
+               </property>
                <property name="toolTip">
                 <string>추천 목록</string>
                </property>
@@ -252,14 +310,19 @@
                </property>
                <property name="iconSize">
                 <size>
-                 <width>24</width>
-                 <height>24</height>
+                 <width>48</width>
+                 <height>48</height>
                 </size>
                </property>
               </widget>
              </item>
              <item>
               <widget class="QPushButton" name="recyclingListBtn">
+               <property name="font">
+                <font>
+                 <pointsize>18</pointsize>
+                </font>
+               </property>
                <property name="toolTip">
                 <string>내 재생목록</string>
                </property>
@@ -272,14 +335,19 @@
                </property>
                <property name="iconSize">
                 <size>
-                 <width>24</width>
-                 <height>24</height>
+                 <width>48</width>
+                 <height>48</height>
                 </size>
                </property>
               </widget>
              </item>
              <item>
               <widget class="QPushButton" name="favoritesBtn">
+               <property name="font">
+                <font>
+                 <pointsize>18</pointsize>
+                </font>
+               </property>
                <property name="toolTip">
                 <string>즐겨찾기</string>
                </property>
@@ -292,8 +360,52 @@
                </property>
                <property name="iconSize">
                 <size>
-                 <width>24</width>
-                 <height>24</height>
+                 <width>48</width>
+                 <height>48</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="playerBtn">
+               <property name="font">
+                <font>
+                 <pointsize>18</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>플레이어</string>
+               </property>
+               <property name="icon">
+                <iconset resource="resources.qrc">
+                 <normaloff>:/Icons/icons/play.svg</normaloff>:/Icons/icons/play.svg</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>48</width>
+                 <height>48</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="yotubeBtn">
+               <property name="font">
+                <font>
+                 <pointsize>18</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>Yotube</string>
+               </property>
+               <property name="icon">
+                <iconset resource="resources.qrc">
+                 <normaloff>:/Icons/icons/youtube.svg</normaloff>:/Icons/icons/youtube.svg</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>48</width>
+                 <height>48</height>
                 </size>
                </property>
               </widget>
@@ -340,6 +452,11 @@
              </property>
              <item>
               <widget class="QPushButton" name="settingsBtn">
+               <property name="font">
+                <font>
+                 <pointsize>18</pointsize>
+                </font>
+               </property>
                <property name="toolTip">
                 <string>설정</string>
                </property>
@@ -352,14 +469,19 @@
                </property>
                <property name="iconSize">
                 <size>
-                 <width>24</width>
-                 <height>24</height>
+                 <width>48</width>
+                 <height>48</height>
                 </size>
                </property>
               </widget>
              </item>
              <item>
               <widget class="QPushButton" name="infoBtn">
+               <property name="font">
+                <font>
+                 <pointsize>18</pointsize>
+                </font>
+               </property>
                <property name="toolTip">
                 <string>개인정보</string>
                </property>
@@ -372,8 +494,8 @@
                </property>
                <property name="iconSize">
                 <size>
-                 <width>24</width>
-                 <height>24</height>
+                 <width>48</width>
+                 <height>48</height>
                 </size>
                </property>
               </widget>
@@ -415,7 +537,7 @@
         <widget class="QWidget" name="centerMenuSubContainer" native="true">
          <property name="minimumSize">
           <size>
-           <width>200</width>
+           <width>300</width>
            <height>0</height>
           </size>
          </property>
@@ -437,6 +559,12 @@
           </property>
           <item alignment="Qt::AlignTop">
            <widget class="QFrame" name="frame_4">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>58</height>
+             </size>
+            </property>
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
             </property>
@@ -461,6 +589,11 @@
              </property>
              <item>
               <widget class="QLabel" name="label_3">
+               <property name="font">
+                <font>
+                 <pointsize>18</pointsize>
+                </font>
+               </property>
                <property name="text">
                 <string>More Menu</string>
                </property>
@@ -471,17 +604,22 @@
              </item>
              <item alignment="Qt::AlignRight">
               <widget class="QPushButton" name="closeCenterMenuBtn">
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
                <property name="text">
                 <string/>
                </property>
                <property name="icon">
-                <iconset resource="resources.qrc">
+                <iconset>
                  <normaloff>:/icons/icons/x-circle.svg</normaloff>:/icons/icons/x-circle.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
-                 <width>24</width>
-                 <height>24</height>
+                 <width>48</width>
+                 <height>48</height>
                 </size>
                </property>
               </widget>
@@ -607,26 +745,10 @@
               <number>0</number>
              </property>
              <item>
-              <widget class="QLabel" name="label_7">
-               <property name="maximumSize">
-                <size>
-                 <width>24</width>
-                 <height>24</height>
-                </size>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="pixmap">
-                <pixmap resource="resources.qrc">:/icons/icons/smsowemusic.png</pixmap>
-               </property>
-              </widget>
-             </item>
-             <item>
               <widget class="QLabel" name="label_8">
                <property name="font">
                 <font>
-                 <pointsize>14</pointsize>
+                 <pointsize>28</pointsize>
                  <weight>75</weight>
                  <bold>true</bold>
                 </font>
@@ -670,12 +792,12 @@
                </property>
                <property name="icon">
                 <iconset resource="resources.qrc">
-                 <normaloff>:/icons/icons/more-horizontal.svg</normaloff>:/icons/icons/more-horizontal.svg</iconset>
+                 <normaloff>:/Icons/icons/more-horizontal.svg</normaloff>:/Icons/icons/more-horizontal.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
-                 <width>24</width>
-                 <height>24</height>
+                 <width>48</width>
+                 <height>48</height>
                 </size>
                </property>
               </widget>
@@ -691,8 +813,8 @@
                </property>
                <property name="iconSize">
                 <size>
-                 <width>24</width>
-                 <height>24</height>
+                 <width>48</width>
+                 <height>48</height>
                 </size>
                </property>
               </widget>
@@ -731,12 +853,12 @@
                </property>
                <property name="icon">
                 <iconset resource="resources.qrc">
-                 <normaloff>:/icons/icons/minus.svg</normaloff>:/icons/icons/minus.svg</iconset>
+                 <normaloff>:/Icons/icons/minus.svg</normaloff>:/Icons/icons/minus.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
-                 <width>24</width>
-                 <height>24</height>
+                 <width>48</width>
+                 <height>48</height>
                 </size>
                </property>
               </widget>
@@ -748,12 +870,12 @@
                </property>
                <property name="icon">
                 <iconset resource="resources.qrc">
-                 <normaloff>:/icons/icons/square.svg</normaloff>:/icons/icons/square.svg</iconset>
+                 <normaloff>:/Icons/icons/square.svg</normaloff>:/Icons/icons/square.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
-                 <width>24</width>
-                 <height>24</height>
+                 <width>48</width>
+                 <height>48</height>
                 </size>
                </property>
               </widget>
@@ -765,12 +887,12 @@
                </property>
                <property name="icon">
                 <iconset resource="resources.qrc">
-                 <normaloff>:/icons/icons/x.svg</normaloff>:/icons/icons/x.svg</iconset>
+                 <normaloff>:/Icons/icons/x.svg</normaloff>:/Icons/icons/x.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
-                 <width>24</width>
-                 <height>24</height>
+                 <width>48</width>
+                 <height>48</height>
                 </size>
                </property>
               </widget>
@@ -808,10 +930,16 @@
           <item>
            <widget class="QWidget" name="mainContentsContainer" native="true">
             <layout class="QVBoxLayout" name="verticalLayout_8">
+             <property name="spacing">
+              <number>0</number>
+             </property>
              <property name="leftMargin">
               <number>0</number>
              </property>
              <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
               <number>0</number>
              </property>
              <property name="bottomMargin">
@@ -819,11 +947,31 @@
              </property>
              <item>
               <widget class="QCustomStackedWidget" name="mainPages">
+               <property name="font">
+                <font>
+                 <family>Algerian</family>
+                </font>
+               </property>
                <property name="currentIndex">
-                <number>0</number>
+                <number>5</number>
                </property>
                <widget class="QWidget" name="page_5">
                 <layout class="QVBoxLayout" name="verticalLayout_9">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
                  <item>
                   <widget class="QLabel" name="label_6">
                    <property name="text">
@@ -839,24 +987,227 @@
                  </item>
                 </layout>
                </widget>
-               <widget class="QWidget" name="page_6">
-                <layout class="QHBoxLayout" name="horizontalLayout_15">
+               <widget class="QWidget" name="page_10">
+                <layout class="QVBoxLayout" name="verticalLayout_15">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
                  <item>
-                  <widget class="QLabel" name="label_9">
+                  <layout class="QHBoxLayout" name="horizontalLayout_16" stretch="7">
+                   <item>
+                    <layout class="QVBoxLayout" name="verticalLayout_14" stretch="90,5,0,5">
+                     <item>
+                      <widget class="QVideoWidget" name="view" native="true">
+                       <property name="autoFillBackground">
+                        <bool>false</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QSlider" name="bar">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <layout class="QHBoxLayout" name="horizontalLayout_17">
+                       <item>
+                        <widget class="QLabel" name="state">
+                         <property name="text">
+                          <string>Media Status</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="playtime">
+                         <property name="text">
+                          <string>Running time</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                     <item>
+                      <layout class="QHBoxLayout" name="horizontalLayout_18" stretch="0,0,0,0,0,0">
+                       <property name="spacing">
+                        <number>10</number>
+                       </property>
+                       <item>
+                        <widget class="QPushButton" name="btn_stop">
+                         <property name="text">
+                          <string>■</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QPushButton" name="btn_play">
+                         <property name="text">
+                          <string>▶</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QPushButton" name="btn_forward">
+                         <property name="text">
+                          <string>▶▶</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QPushButton" name="btn_pause">
+                         <property name="text">
+                          <string>❚❚</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QPushButton" name="btn_prev">
+                         <property name="text">
+                          <string>◀◀</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QSlider" name="vol">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>0</height>
+                          </size>
+                         </property>
+                         <property name="orientation">
+                          <enum>Qt::Horizontal</enum>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                    </layout>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </widget>
+               <widget class="QWidget" name="page_6">
+                <layout class="QVBoxLayout" name="verticalLayout_16">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="label_17">
+                   <property name="font">
+                    <font>
+                     <family>Arial Black</family>
+                     <pointsize>18</pointsize>
+                     <weight>75</weight>
+                     <bold>true</bold>
+                    </font>
+                   </property>
                    <property name="text">
                     <string>top 100</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
                    </property>
+                   <property name="margin">
+                    <number>0</number>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QTableWidget" name="tableWidget">
+                   <column>
+                    <property name="text">
+                     <string>곡</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>아티스트</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>앨범</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>듣기</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>재생목록</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>즐겨찾기</string>
+                    </property>
+                   </column>
                   </widget>
                  </item>
                 </layout>
                </widget>
                <widget class="QWidget" name="page_8">
                 <layout class="QVBoxLayout" name="verticalLayout_11">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
                  <item>
                   <widget class="QLabel" name="label_11">
+                   <property name="font">
+                    <font>
+                     <family>Arial Black</family>
+                     <pointsize>18</pointsize>
+                     <weight>75</weight>
+                     <bold>true</bold>
+                    </font>
+                   </property>
                    <property name="text">
                     <string>내 재생목록</string>
                    </property>
@@ -865,12 +1216,113 @@
                    </property>
                   </widget>
                  </item>
+                 <item>
+                  <widget class="QFrame" name="frame_9">
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QHBoxLayout" name="horizontalLayout_15">
+                    <item>
+                     <widget class="QComboBox" name="comboBox">
+                      <property name="font">
+                       <font>
+                        <pointsize>18</pointsize>
+                       </font>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLineEdit" name="lineEdit">
+                      <property name="font">
+                       <font>
+                        <pointsize>18</pointsize>
+                       </font>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="pushButton">
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="icon">
+                       <iconset resource="resources.qrc">
+                        <normaloff>:/Icons/icons/plus.svg</normaloff>:/Icons/icons/plus.svg</iconset>
+                      </property>
+                      <property name="iconSize">
+                       <size>
+                        <width>24</width>
+                        <height>24</height>
+                       </size>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="pushButton_4">
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="icon">
+                       <iconset resource="resources.qrc">
+                        <normaloff>:/Icons/icons/minus.svg</normaloff>:/Icons/icons/minus.svg</iconset>
+                      </property>
+                      <property name="iconSize">
+                       <size>
+                        <width>24</width>
+                        <height>24</height>
+                       </size>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QTableWidget" name="tableWidget_3">
+                   <column>
+                    <property name="text">
+                     <string>곡</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>아티스트</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>듣기</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>앨범</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>즐겨찾기</string>
+                    </property>
+                   </column>
+                  </widget>
+                 </item>
                 </layout>
                </widget>
                <widget class="QWidget" name="page_9">
                 <layout class="QVBoxLayout" name="verticalLayout_12">
                  <item>
                   <widget class="QLabel" name="label_12">
+                   <property name="font">
+                    <font>
+                     <family>Arial Black</family>
+                     <pointsize>18</pointsize>
+                     <weight>75</weight>
+                     <bold>true</bold>
+                    </font>
+                   </property>
                    <property name="text">
                     <string>즐겨찾기</string>
                    </property>
@@ -879,18 +1331,99 @@
                    </property>
                   </widget>
                  </item>
+                 <item>
+                  <widget class="QTableWidget" name="tableWidget_2">
+                   <column>
+                    <property name="text">
+                     <string>곡</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>아티스트</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>앨범</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>듣기</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>재생목록</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>즐겨찾기</string>
+                    </property>
+                   </column>
+                  </widget>
+                 </item>
                 </layout>
                </widget>
                <widget class="QWidget" name="page_7">
                 <layout class="QVBoxLayout" name="verticalLayout_10">
                  <item>
                   <widget class="QLabel" name="label_10">
+                   <property name="font">
+                    <font>
+                     <pointsize>18</pointsize>
+                     <weight>75</weight>
+                     <bold>true</bold>
+                    </font>
+                   </property>
                    <property name="text">
                     <string>추천 목록</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
                    </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QTableWidget" name="tableWidget_4">
+                   <property name="font">
+                    <font>
+                     <weight>50</weight>
+                     <bold>false</bold>
+                    </font>
+                   </property>
+                   <column>
+                    <property name="text">
+                     <string>곡</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>아티스트</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>앨범</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>듣기</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>재생목록</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>즐겨찾기</string>
+                    </property>
+                   </column>
                   </widget>
                  </item>
                 </layout>
@@ -926,6 +1459,12 @@
              </property>
              <item>
               <widget class="QWidget" name="rightLoginSubContainer" native="true">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>0</height>
+                </size>
+               </property>
                <layout class="QVBoxLayout" name="verticalLayout_7">
                 <property name="spacing">
                  <number>0</number>
@@ -944,6 +1483,12 @@
                 </property>
                 <item>
                  <widget class="QFrame" name="frame_8">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>0</height>
+                   </size>
+                  </property>
                   <property name="frameShape">
                    <enum>QFrame::StyledPanel</enum>
                   </property>
@@ -954,7 +1499,7 @@
                    <item>
                     <widget class="QLabel" name="label">
                      <property name="text">
-                      <string>Login</string>
+                      <string>PlayList</string>
                      </property>
                      <property name="alignment">
                       <set>Qt::AlignCenter</set>
@@ -967,8 +1512,14 @@
                       <string/>
                      </property>
                      <property name="icon">
-                      <iconset resource="resources.qrc">
+                      <iconset>
                        <normaloff>:/icons/icons/x-circle.svg</normaloff>:/icons/icons/x-circle.svg</iconset>
+                     </property>
+                     <property name="iconSize">
+                      <size>
+                       <width>32</width>
+                       <height>32</height>
+                      </size>
                      </property>
                     </widget>
                    </item>
@@ -981,16 +1532,208 @@
                    <number>0</number>
                   </property>
                   <widget class="QWidget" name="page_3">
-                   <layout class="QHBoxLayout" name="horizontalLayout_14">
+                   <layout class="QVBoxLayout" name="verticalLayout_19">
                     <item>
-                     <widget class="QLabel" name="label_2">
-                      <property name="text">
-                       <string>login</string>
+                     <widget class="QFrame" name="frame_10">
+                      <property name="frameShape">
+                       <enum>QFrame::StyledPanel</enum>
                       </property>
-                      <property name="alignment">
-                       <set>Qt::AlignCenter</set>
+                      <property name="frameShadow">
+                       <enum>QFrame::Raised</enum>
                       </property>
+                      <layout class="QVBoxLayout" name="verticalLayout_18">
+                       <property name="spacing">
+                        <number>0</number>
+                       </property>
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QFrame" name="frame_12">
+                         <property name="frameShape">
+                          <enum>QFrame::StyledPanel</enum>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Raised</enum>
+                         </property>
+                         <layout class="QHBoxLayout" name="horizontalLayout_14">
+                          <property name="spacing">
+                           <number>0</number>
+                          </property>
+                          <property name="leftMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="topMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="rightMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="bottomMargin">
+                           <number>0</number>
+                          </property>
+                          <item alignment="Qt::AlignLeft">
+                           <widget class="QFrame" name="frame_11">
+                            <property name="frameShape">
+                             <enum>QFrame::StyledPanel</enum>
+                            </property>
+                            <property name="frameShadow">
+                             <enum>QFrame::Raised</enum>
+                            </property>
+                            <layout class="QVBoxLayout" name="verticalLayout_17">
+                             <property name="spacing">
+                              <number>0</number>
+                             </property>
+                             <property name="leftMargin">
+                              <number>0</number>
+                             </property>
+                             <property name="topMargin">
+                              <number>0</number>
+                             </property>
+                             <property name="rightMargin">
+                              <number>0</number>
+                             </property>
+                             <property name="bottomMargin">
+                              <number>0</number>
+                             </property>
+                            </layout>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QFrame" name="frame_13">
+                            <property name="sizePolicy">
+                             <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                              <horstretch>0</horstretch>
+                              <verstretch>0</verstretch>
+                             </sizepolicy>
+                            </property>
+                            <property name="frameShape">
+                             <enum>QFrame::StyledPanel</enum>
+                            </property>
+                            <property name="frameShadow">
+                             <enum>QFrame::Raised</enum>
+                            </property>
+                            <layout class="QVBoxLayout" name="verticalLayout_20">
+                             <property name="spacing">
+                              <number>0</number>
+                             </property>
+                             <property name="leftMargin">
+                              <number>0</number>
+                             </property>
+                             <property name="topMargin">
+                              <number>0</number>
+                             </property>
+                             <property name="rightMargin">
+                              <number>0</number>
+                             </property>
+                             <property name="bottomMargin">
+                              <number>0</number>
+                             </property>
+                             <item>
+                              <widget class="QLabel" name="label_9">
+                               <property name="font">
+                                <font>
+                                 <pointsize>9</pointsize>
+                                </font>
+                               </property>
+                               <property name="text">
+                                <string/>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QLabel" name="label_14">
+                               <property name="font">
+                                <font>
+                                 <pointsize>9</pointsize>
+                                </font>
+                               </property>
+                               <property name="text">
+                                <string/>
+                               </property>
+                              </widget>
+                             </item>
+                            </layout>
+                           </widget>
+                          </item>
+                         </layout>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QFrame" name="frame_14">
+                         <property name="frameShape">
+                          <enum>QFrame::StyledPanel</enum>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Raised</enum>
+                         </property>
+                         <layout class="QHBoxLayout" name="horizontalLayout_19">
+                          <property name="spacing">
+                           <number>0</number>
+                          </property>
+                          <property name="leftMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="topMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="rightMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="bottomMargin">
+                           <number>0</number>
+                          </property>
+                          <item>
+                           <widget class="QPushButton" name="pushButton_2">
+                            <property name="text">
+                             <string/>
+                            </property>
+                            <property name="icon">
+                             <iconset resource="resources.qrc">
+                              <normaloff>:/Icons/icons/folder-plus.svg</normaloff>:/Icons/icons/folder-plus.svg</iconset>
+                            </property>
+                            <property name="iconSize">
+                             <size>
+                              <width>24</width>
+                              <height>24</height>
+                             </size>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QPushButton" name="pushButton_3">
+                            <property name="text">
+                             <string/>
+                            </property>
+                            <property name="icon">
+                             <iconset resource="resources.qrc">
+                              <normaloff>:/Icons/icons/heart.svg</normaloff>:/Icons/icons/heart.svg</iconset>
+                            </property>
+                            <property name="iconSize">
+                             <size>
+                              <width>24</width>
+                              <height>24</height>
+                             </size>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </widget>
+                       </item>
+                      </layout>
                      </widget>
+                    </item>
+                    <item>
+                     <widget class="QListWidget" name="list"/>
                     </item>
                    </layout>
                   </widget>
@@ -1036,6 +1779,12 @@
    <class>QCustomStackedWidget</class>
    <extends>QStackedWidget</extends>
    <header location="global">Custom_Widgets.Widgets.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>QVideoWidget</class>
+   <extends>QWidget</extends>
+   <header location="global">PyQt5.QtMultimediaWidgets</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

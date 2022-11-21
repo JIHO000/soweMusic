@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="images">
+    <file>images/sowemusic360.png</file>
     <file>images/login_sowemusic.png</file>
   </qresource>
   <qresource prefix="icons">

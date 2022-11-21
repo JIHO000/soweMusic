@@ -1,6 +1,21 @@
 <RCC>
-  <qresource prefix="icons">
-    <file>icons/smsowemusic.png</file>
+  <qresource prefix="images">
+    <file>images/home.png</file>
+    <file>images/play-circle.png</file>
+    <file>images/youtube.png</file>
+    <file>images/1_top100.png</file>
+    <file>images/2_recommend.png</file>
+    <file>images/3_mylist.png</file>
+    <file>images/4_favorite.png</file>
+    <file>images/5_settings.png</file>
+    <file>images/6_personal.png</file>
+    <file>images/close.png</file>
+    <file>images/maximize.png</file>
+    <file>images/menu.png</file>
+    <file>images/minimize.png</file>
+    <file>images/sowemusic.png</file>
+  </qresource>
+  <qresource prefix="Icons">
     <file>icons/activity.svg</file>
     <file>icons/airplay.svg</file>
     <file>icons/alert-circle.svg</file>
@@ -288,18 +303,5 @@
     <file>icons/zap-off.svg</file>
     <file>icons/zoom-in.svg</file>
     <file>icons/zoom-out.svg</file>
-  </qresource>
-  <qresource prefix="images">
-    <file>images/1_top100.png</file>
-    <file>images/2_recommend.png</file>
-    <file>images/3_mylist.png</file>
-    <file>images/4_favorite.png</file>
-    <file>images/5_settings.png</file>
-    <file>images/6_personal.png</file>
-    <file>images/close.png</file>
-    <file>images/maximize.png</file>
-    <file>images/menu.png</file>
-    <file>images/minimize.png</file>
-    <file>images/sowemusic.png</file>
   </qresource>
 </RCC>
