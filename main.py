@@ -412,10 +412,9 @@ class MainWindow(QMainWindow):
 
         df = pd.DataFrame(te_array, columns=te.columns_)
 
-        apr = apriori(df, min_support=0.05,use_colnames=True)
-        self.apriori_list = []
-        for i in range(len(apr)):
-            self.apriori_list.append(list(apr["itemsets"][i]))
+        self.apr = apriori(df, min_support=0.05,use_colnames=True)
+        #self.apr = pd.read_csv("C:\\UI\\sowe\\data_df_2.csv", index_col=0)
+
 
     def getRecommendData(self):
         self.query.exec_("select songId from favorits where userId ='%s'"%(self.id))
@@ -423,15 +422,16 @@ class MainWindow(QMainWindow):
         self.recommend_list=[]
         while self.query.next():
             user_items.append(int(self.query.value(0)))
-
-        if len(user_items) != 0 and len(self.apriori_list[len(self.apriori_list) - 1]) > len(user_items):
-            for i in range(len(self.apriori_list) - 1, -1, -1):
-                if all(x in self.apriori_list[i] for x in user_items):
-                    print(self.apriori_list[i])
-                    self.recommend_list = self.apriori_list[i].copy()
+        
+        if len(user_items) != 0 and len(self.apr["itemsets"][len(self.apr["itemsets"]) - 1]) > len(user_items):
+            for i in range(len(self.apr["itemsets"]) - 1, -1, -1):
+                if all(x in list(self.apr["itemsets"][i]) for x in user_items):
+                    print(self.apr["itemsets"][i])
+                    self.recommend_list = list(self.apr["itemsets"][i]).copy()
                     for j in user_items:
                         self.recommend_list.remove(j)
                     break
+
         print(self.recommend_list)       
        
 class loginWindow(QMainWindow):
