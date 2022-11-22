@@ -99,7 +99,8 @@
 							"recommendListBtn": "page_7",
 							"recyclingListBtn": "page_8",
 							"favoritesBtn": "page_9",
-							"playerBtn":"page_10"
+							"playerBtn":"page_10",
+							"yotubeBtn":"page_11"
 						}
 					]
 				}

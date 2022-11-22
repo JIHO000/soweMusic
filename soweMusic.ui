@@ -53,7 +53,7 @@
 #rightLoginSubContainer{
 	background-color:#FFE482;
 }
-#comboBox, #lineEdit{
+#comboBox, #lineEdit, #lineEdit_2{
 	border: 1px solid;
 	border-radius: 4px;
 	padding-left:10px
@@ -630,7 +630,7 @@
           <item>
            <widget class="QCustomStackedWidget" name="centerMenuPages">
             <property name="currentIndex">
-             <number>1</number>
+             <number>0</number>
             </property>
             <widget class="QWidget" name="page">
              <layout class="QHBoxLayout" name="horizontalLayout_6">
@@ -953,7 +953,7 @@
                 </font>
                </property>
                <property name="currentIndex">
-                <number>2</number>
+                <number>1</number>
                </property>
                <widget class="QWidget" name="page_5">
                 <layout class="QVBoxLayout" name="verticalLayout_9">
@@ -987,6 +987,58 @@
                  </item>
                 </layout>
                </widget>
+               <widget class="QWidget" name="page_11">
+                <layout class="QVBoxLayout" name="verticalLayout_21">
+                 <item alignment="Qt::AlignTop">
+                  <widget class="QFrame" name="frame_15">
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QHBoxLayout" name="horizontalLayout_20">
+                    <item>
+                     <widget class="QLineEdit" name="lineEdit_2"/>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="pushButton_5">
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="icon">
+                       <iconset resource="resources.qrc">
+                        <normaloff>:/Icons/icons/search.svg</normaloff>:/Icons/icons/search.svg</iconset>
+                      </property>
+                      <property name="iconSize">
+                       <size>
+                        <width>24</width>
+                        <height>24</height>
+                       </size>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QFrame" name="frame_16">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
                <widget class="QWidget" name="page_10">
                 <layout class="QVBoxLayout" name="verticalLayout_15">
                  <property name="spacing">
@@ -1006,6 +1058,9 @@
                  </property>
                  <item>
                   <layout class="QHBoxLayout" name="horizontalLayout_16" stretch="7">
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
                    <item>
                     <layout class="QVBoxLayout" name="verticalLayout_14" stretch="90,5,0,5">
                      <item>
@@ -1294,12 +1349,12 @@
                    </column>
                    <column>
                     <property name="text">
-                     <string>듣기</string>
+                     <string>앨범</string>
                     </property>
                    </column>
                    <column>
                     <property name="text">
-                     <string>앨범</string>
+                     <string>듣기</string>
                     </property>
                    </column>
                    <column>

@@ -1,1 +1,0 @@
-pyuic5 -x C:\UI\sowe\player\player.ui -o C:\UI\sowe\player\player.py

@@ -14,7 +14,9 @@ import mlxtend
 import numpy as np
 from mlxtend.preprocessing import TransactionEncoder
 from mlxtend.frequent_patterns import apriori
-
+from PySide2.QtWebEngineWidgets import QWebEngineView
+from PySide2.QtWidgets import QVBoxLayout
+from getHtml import *
 
 class MainWindow(QMainWindow):
     def __init__(self, id, parent=None):
@@ -28,7 +30,10 @@ class MainWindow(QMainWindow):
         while query.next():
             self.ui.comboBox.addItem(query.value(0))
         self.ui.comboBox.setCurrentIndex(0)
-
+        self.layout = QVBoxLayout()
+        self.view = QWebEngineView()
+        self.layout.addWidget(self.view)
+        self.ui.frame_16.setLayout(self.layout)
         self.id=id
         self.ui.tableWidget.setColumnWidth(0,300)
         self.ui.tableWidget.setColumnWidth(1,300)
@@ -43,6 +48,23 @@ class MainWindow(QMainWindow):
         self.ui.tableWidget_2.setColumnWidth(3,100)
         self.ui.tableWidget_2.setColumnWidth(4,100)
         self.ui.tableWidget_2.setColumnWidth(5,100)
+        
+        self.ui.tableWidget_3.setColumnWidth(0,300)
+        self.ui.tableWidget_3.setColumnWidth(1,300)
+        self.ui.tableWidget_3.setColumnWidth(2,300)
+        self.ui.tableWidget_3.setColumnWidth(3,100)
+        self.ui.tableWidget_3.setColumnWidth(4,100)
+
+        self.ui.tableWidget_4.setColumnWidth(0,300)
+        self.ui.tableWidget_4.setColumnWidth(1,300)
+        self.ui.tableWidget_4.setColumnWidth(2,300)
+        self.ui.tableWidget_4.setColumnWidth(3,100)
+        self.ui.tableWidget_4.setColumnWidth(4,100)
+        self.ui.tableWidget_4.setColumnWidth(5,100)
+        
+
+        
+
 
         self.ui.settingsBtn.clicked.connect(
             lambda: self.ui.centerMenuContainer.expandMenu())
@@ -88,6 +110,9 @@ class MainWindow(QMainWindow):
         self.ui.recyclingListBtn.clicked.connect(self.loadPlayList)
         self.ui.recommendListBtn.clicked.connect(self.getRecommendData)
         self.ui.recommendListBtn.clicked.connect(self.loadRecommendList)
+        self.ui.pushButton_5.clicked.connect(self.loadYoutube)
+
+
         data = pd.read_csv('20221119205411.csv')
         files = data["곡"]
         if files.bool:
@@ -353,6 +378,14 @@ class MainWindow(QMainWindow):
                 self.ui.tableWidget_4.setCellWidget(tablerow, 5, addfavoritesBtn)
                 tablerow+=1
 
+    def loadYoutube(self):
+        createDirectory("html")
+        URL = extract_url(self.ui.lineEdit_2.text())
+        get_MV(URL, self.ui.lineEdit_2.text())
+        
+        html_url = "\\html\\%s.html"%(self.ui.lineEdit_2.text())
+        self.view.load(QtCore.QUrl().fromLocalFile(os.path.split(os.path.abspath(__file__))[0]+html_url))
+        
 
 
     def listenButtonClicked(self):
