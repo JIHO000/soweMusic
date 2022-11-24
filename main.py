@@ -17,6 +17,7 @@ from mlxtend.frequent_patterns import apriori
 from PySide2.QtWebEngineWidgets import QWebEngineView
 from PySide2.QtWidgets import QVBoxLayout
 from getHtml import *
+import ast
 
 class MainWindow(QMainWindow):
     def __init__(self, id, parent=None):
@@ -430,23 +431,24 @@ class MainWindow(QMainWindow):
         self.loadPlayList()
 
     def getApriori(self):
-        song_list = []
-        for i in range(1,101):
-            self.query.exec_("select songId from favorits where userId = '%s'"%(i))
-            user_list = []
-            while self.query.next():
-                user_list.append(int(self.query.value(0)))
-            song_list.append(user_list)
+        # song_list = []
+        # for i in range(1,101):
+        #     self.query.exec_("select songId from favorits where userId = '%s'"%(i))
+        #     user_list = []
+        #     while self.query.next():
+        #         user_list.append(int(self.query.value(0)))
+        #     song_list.append(user_list)
 
-        data = np.array(song_list)
-        df_data = pd.DataFrame(data)
-        te = TransactionEncoder()
-        te_array = te.fit(data).transform(data)
+        # data = np.array(song_list)
+        # df_data = pd.DataFrame(data)
+        # te = TransactionEncoder()
+        # te_array = te.fit(data).transform(data)
 
-        df = pd.DataFrame(te_array, columns=te.columns_)
+        # df = pd.DataFrame(te_array, columns=te.columns_)
 
-        self.apr = apriori(df, min_support=0.05,use_colnames=True)
-        #self.apr = pd.read_csv("C:\\UI\\sowe\\data_df_2.csv", index_col=0)
+        # self.apr = apriori(df, min_support=0.05,use_colnames=True)
+        print()
+        
 
 
     def getRecommendData(self):
@@ -456,14 +458,18 @@ class MainWindow(QMainWindow):
         while self.query.next():
             user_items.append(int(self.query.value(0)))
         
-        if len(user_items) != 0 and len(self.apr["itemsets"][len(self.apr["itemsets"]) - 1]) > len(user_items):
-            for i in range(len(self.apr["itemsets"]) - 1, -1, -1):
-                if all(x in list(self.apr["itemsets"][i]) for x in user_items):
-                    print(self.apr["itemsets"][i])
-                    self.recommend_list = list(self.apr["itemsets"][i]).copy()
+        self.query.exec_("select list from apriori order by id DESC;")
+        while self.query.next():
+            list_data = ast.literal_eval(self.query.value("list"))
+            if len(user_items) != 0 and len(list_data) > len(user_items):
+                if all(x in list_data for x in user_items):
+                    print(list_data)
+                    self.recommend_list = list_data.copy()
                     for j in user_items:
                         self.recommend_list.remove(j)
                     break
+            if len(list_data) <= 5:
+                break
 
         print(self.recommend_list)       
        

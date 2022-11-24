@@ -3,7 +3,7 @@ from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 from oauth2client.tools import argparser
 
-DEVELOPER_KEY = ""
+DEVELOPER_KEY = "AIzaSyDuyG82_-TrNKoONkr7lTXYvgWcy_ZnMyc"
 YOUTUBE_API_SERVICE_NAME="youtube"
 YOUTUBE_API_VERSION="v3"
 youtube = build(YOUTUBE_API_SERVICE_NAME,YOUTUBE_API_VERSION,developerKey=DEVELOPER_KEY)
@@ -20,8 +20,8 @@ def createDirectory(directory):
 def extract_url(song):
     search_response = youtube.search().list(
         q = song,
-        order = "viewCount",
-        #order = "relevance",
+        #order = "viewCount",
+        order = "relevance",
         part = "snippet",
         maxResults = 1
                                   ).execute()
