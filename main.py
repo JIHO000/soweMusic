@@ -25,9 +25,9 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         loadJsonStyle(self, self.ui)
-        
+        self.id=id
         query = QtSql.QSqlQuery()
-        query.exec_("select DISTINCT comboName from playlist")
+        query.exec_("select DISTINCT comboName from playlist where userId = '%s'"%(self.id))
         while query.next():
             self.ui.comboBox.addItem(query.value(0))
         self.ui.comboBox.setCurrentIndex(0)
@@ -35,7 +35,6 @@ class MainWindow(QMainWindow):
         self.view = QWebEngineView()
         self.layout.addWidget(self.view)
         self.ui.frame_16.setLayout(self.layout)
-        self.id=id
         self.ui.tableWidget.setColumnWidth(0,300)
         self.ui.tableWidget.setColumnWidth(1,300)
         self.ui.tableWidget.setColumnWidth(2,300)
@@ -135,6 +134,8 @@ class MainWindow(QMainWindow):
         self.getRecommendData()
         self.loadRecommendList()
 
+        # self.ui.tableWidget.setStyleSheet("QTableView::item:alternate { background-color: #ED1C24; } QTableView::item { background-color: #fff; }")
+        #self.ui.tableWidget.setStyleSheet("QTableView {selection-background-color: qlineargradient(x1: 0, y1: 0, x2: 0.5, y2: 0.5,stop: 0 #FF92BB, stop: 1 white);} QTableView QTableCornerButton::section {background: red;border: 2px outset red;} QTableView::indicator:unchecked {background-color: #d7d6d5}")
     def clickPlay(self):
         index = self.ui.list.currentRow()   
         self.query.exec_("select song, artist from ranking where id = '%s'"%(index+1))
@@ -304,17 +305,17 @@ class MainWindow(QMainWindow):
             self.ui.tableWidget_2.setCellWidget(tablerow, 5, addfavoritesBtn)
             tablerow+=1    
     
-        self.ui.tableWidget.setStyleSheet("QTableView::item:alternate { background-color: #ED1C24; } QTableView::item { background-color: #fff; }")
+        
     
     def loadPlayList(self):
         query = QtSql.QSqlQuery()
         query.exec_("select count(*) from ranking where id in (select songId from playlist where userId = '%s' and comboName = '%s')"%(self.id, self.ui.comboBox.currentText()))
         query.first()
         self.ui.tableWidget_3.setRowCount(query.value("count(*)"))
-        self.ui.tableWidget_3.setRowCount(100)
+        # self.ui.tableWidget_3.setRowCount(100)
         self.query.exec_("select * from ranking where id in (select songId from playlist where userId = '%s' and comboName = '%s')"%(self.id, self.ui.comboBox.currentText()))
         tablerow=0
-        
+        print(self.ui.comboBox.currentText())
         query = QtSql.QSqlQuery()
             
 

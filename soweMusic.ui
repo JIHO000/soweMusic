@@ -56,7 +56,8 @@
 #comboBox, #lineEdit, #lineEdit_2{
 	border: 1px solid;
 	border-radius: 4px;
-	padding-left:10px
+	padding-left:10px;
+	margin-right: 10px;
 }
 #comboBox::drop-down{
 	border: 0px
@@ -77,6 +78,40 @@
 	padding-left:10px;
 	background-color:#fff;
 }
+QSlider::groove:horizontal {
+    border: 1px solid #999999;
+    height: 8px; /* the groove expands to the size of the slider by default. by giving it a height, it has a fixed size */
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #B1B1B1, stop:1 #c4c4c4);
+    margin: 2px 0;
+}
+
+QSlider::handle:horizontal {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #b4b4b4, stop:1 #8f8f8f);
+    border: 1px solid #5c5c5c;
+    width: 18px;
+    margin: -2px 0; /* handle is placed by default on the contents rect of the groove. Expand outside the groove */
+    border-radius: 3px;
+}
+QSlider::groove:vertical {
+    background: red;
+    position: absolute; /* absolutely position 4px from the left and right of the widget. setting margins on the widget should work too... */
+    left: 4px; right: 4px;
+}
+
+QSlider::handle:vertical {
+    height: 10px;
+    background: green;
+    margin: 0 -4px; /* expand outside the groove */
+}
+
+QSlider::add-page:vertical {
+    background: white;
+}
+
+QSlider::sub-page:vertical {
+    background: pink;
+}
+
 </string>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -190,7 +225,8 @@
               <widget class="QPushButton" name="menuBtn">
                <property name="font">
                 <font>
-                 <pointsize>18</pointsize>
+                 <family>한컴 고딕</family>
+                 <pointsize>22</pointsize>
                 </font>
                </property>
                <property name="toolTip">
@@ -248,7 +284,8 @@
               <widget class="QPushButton" name="homeBtn">
                <property name="font">
                 <font>
-                 <pointsize>18</pointsize>
+                 <family>한컴 고딕</family>
+                 <pointsize>22</pointsize>
                 </font>
                </property>
                <property name="text">
@@ -270,7 +307,8 @@
               <widget class="QPushButton" name="top100Btn">
                <property name="font">
                 <font>
-                 <pointsize>18</pointsize>
+                 <family>한컴 고딕</family>
+                 <pointsize>22</pointsize>
                 </font>
                </property>
                <property name="toolTip">
@@ -295,7 +333,8 @@
               <widget class="QPushButton" name="recommendListBtn">
                <property name="font">
                 <font>
-                 <pointsize>18</pointsize>
+                 <family>한컴 고딕</family>
+                 <pointsize>22</pointsize>
                 </font>
                </property>
                <property name="toolTip">
@@ -320,7 +359,8 @@
               <widget class="QPushButton" name="recyclingListBtn">
                <property name="font">
                 <font>
-                 <pointsize>18</pointsize>
+                 <family>한컴 고딕</family>
+                 <pointsize>22</pointsize>
                 </font>
                </property>
                <property name="toolTip">
@@ -345,7 +385,8 @@
               <widget class="QPushButton" name="favoritesBtn">
                <property name="font">
                 <font>
-                 <pointsize>18</pointsize>
+                 <family>한컴 고딕</family>
+                 <pointsize>22</pointsize>
                 </font>
                </property>
                <property name="toolTip">
@@ -370,7 +411,8 @@
               <widget class="QPushButton" name="playerBtn">
                <property name="font">
                 <font>
-                 <pointsize>18</pointsize>
+                 <family>한컴 고딕</family>
+                 <pointsize>22</pointsize>
                 </font>
                </property>
                <property name="text">
@@ -392,7 +434,8 @@
               <widget class="QPushButton" name="yotubeBtn">
                <property name="font">
                 <font>
-                 <pointsize>18</pointsize>
+                 <family>한컴 고딕</family>
+                 <pointsize>22</pointsize>
                 </font>
                </property>
                <property name="text">
@@ -454,7 +497,8 @@
               <widget class="QPushButton" name="settingsBtn">
                <property name="font">
                 <font>
-                 <pointsize>18</pointsize>
+                 <family>한컴 고딕</family>
+                 <pointsize>22</pointsize>
                 </font>
                </property>
                <property name="toolTip">
@@ -479,7 +523,8 @@
               <widget class="QPushButton" name="infoBtn">
                <property name="font">
                 <font>
-                 <pointsize>18</pointsize>
+                 <family>한컴 고딕</family>
+                 <pointsize>22</pointsize>
                 </font>
                </property>
                <property name="toolTip">
@@ -591,7 +636,8 @@
               <widget class="QLabel" name="label_3">
                <property name="font">
                 <font>
-                 <pointsize>18</pointsize>
+                 <family>한컴 고딕</family>
+                 <pointsize>22</pointsize>
                 </font>
                </property>
                <property name="text">
@@ -613,8 +659,8 @@
                 <string/>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>:/icons/icons/x-circle.svg</normaloff>:/icons/icons/x-circle.svg</iconset>
+                <iconset resource="resources.qrc">
+                 <normaloff>:/Icons/icons/x-circle.svg</normaloff>:/Icons/icons/x-circle.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -748,6 +794,7 @@
               <widget class="QLabel" name="label_8">
                <property name="font">
                 <font>
+                 <family>한컴 고딕</family>
                  <pointsize>28</pointsize>
                  <weight>75</weight>
                  <bold>true</bold>
@@ -989,6 +1036,21 @@
                </widget>
                <widget class="QWidget" name="page_11">
                 <layout class="QVBoxLayout" name="verticalLayout_21">
+                 <property name="spacing">
+                  <number>20</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>20</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
                  <item alignment="Qt::AlignTop">
                   <widget class="QFrame" name="frame_15">
                    <property name="frameShape">
@@ -999,7 +1061,16 @@
                    </property>
                    <layout class="QHBoxLayout" name="horizontalLayout_20">
                     <item>
-                     <widget class="QLineEdit" name="lineEdit_2"/>
+                     <widget class="QLineEdit" name="lineEdit_2">
+                      <property name="font">
+                       <font>
+                        <pointsize>24</pointsize>
+                       </font>
+                      </property>
+                      <property name="placeholderText">
+                       <string>Write down the title of the song</string>
+                      </property>
+                     </widget>
                     </item>
                     <item>
                      <widget class="QPushButton" name="pushButton_5">
@@ -1012,8 +1083,8 @@
                       </property>
                       <property name="iconSize">
                        <size>
-                        <width>24</width>
-                        <height>24</height>
+                        <width>48</width>
+                        <height>48</height>
                        </size>
                       </property>
                      </widget>
@@ -1065,6 +1136,11 @@
                     <layout class="QVBoxLayout" name="verticalLayout_14" stretch="90,5,0,5">
                      <item>
                       <widget class="QVideoWidget" name="view" native="true">
+                       <property name="font">
+                        <font>
+                         <family>한컴 고딕</family>
+                        </font>
+                       </property>
                        <property name="autoFillBackground">
                         <bool>false</bool>
                        </property>
@@ -1081,6 +1157,12 @@
                       <layout class="QHBoxLayout" name="horizontalLayout_17">
                        <item>
                         <widget class="QLabel" name="state">
+                         <property name="font">
+                          <font>
+                           <family>한컴 고딕</family>
+                           <pointsize>18</pointsize>
+                          </font>
+                         </property>
                          <property name="text">
                           <string>Media Status</string>
                          </property>
@@ -1088,6 +1170,12 @@
                        </item>
                        <item>
                         <widget class="QLabel" name="playtime">
+                         <property name="font">
+                          <font>
+                           <family>한컴 고딕</family>
+                           <pointsize>18</pointsize>
+                          </font>
+                         </property>
                          <property name="text">
                           <string>Running time</string>
                          </property>
@@ -1103,35 +1191,85 @@
                        <item>
                         <widget class="QPushButton" name="btn_stop">
                          <property name="text">
-                          <string>■</string>
+                          <string/>
                          </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QPushButton" name="btn_play">
-                         <property name="text">
-                          <string>▶</string>
+                         <property name="icon">
+                          <iconset resource="resources.qrc">
+                           <normaloff>:/Icons/icons/stop-circle.svg</normaloff>:/Icons/icons/stop-circle.svg</iconset>
+                         </property>
+                         <property name="iconSize">
+                          <size>
+                           <width>48</width>
+                           <height>48</height>
+                          </size>
                          </property>
                         </widget>
                        </item>
                        <item>
                         <widget class="QPushButton" name="btn_forward">
                          <property name="text">
-                          <string>▶▶</string>
+                          <string/>
+                         </property>
+                         <property name="icon">
+                          <iconset resource="resources.qrc">
+                           <normaloff>:/Icons/icons/skip-forward.svg</normaloff>:/Icons/icons/skip-forward.svg</iconset>
+                         </property>
+                         <property name="iconSize">
+                          <size>
+                           <width>48</width>
+                           <height>48</height>
+                          </size>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QPushButton" name="btn_play">
+                         <property name="text">
+                          <string/>
+                         </property>
+                         <property name="icon">
+                          <iconset resource="resources.qrc">
+                           <normaloff>:/Icons/icons/play.svg</normaloff>:/Icons/icons/play.svg</iconset>
+                         </property>
+                         <property name="iconSize">
+                          <size>
+                           <width>48</width>
+                           <height>48</height>
+                          </size>
                          </property>
                         </widget>
                        </item>
                        <item>
                         <widget class="QPushButton" name="btn_pause">
                          <property name="text">
-                          <string>❚❚</string>
+                          <string/>
+                         </property>
+                         <property name="icon">
+                          <iconset resource="resources.qrc">
+                           <normaloff>:/Icons/icons/pause.svg</normaloff>:/Icons/icons/pause.svg</iconset>
+                         </property>
+                         <property name="iconSize">
+                          <size>
+                           <width>48</width>
+                           <height>48</height>
+                          </size>
                          </property>
                         </widget>
                        </item>
                        <item>
                         <widget class="QPushButton" name="btn_prev">
                          <property name="text">
-                          <string>◀◀</string>
+                          <string/>
+                         </property>
+                         <property name="icon">
+                          <iconset resource="resources.qrc">
+                           <normaloff>:/Icons/icons/skip-back.svg</normaloff>:/Icons/icons/skip-back.svg</iconset>
+                         </property>
+                         <property name="iconSize">
+                          <size>
+                           <width>48</width>
+                           <height>48</height>
+                          </size>
                          </property>
                         </widget>
                        </item>
@@ -1165,13 +1303,13 @@
                <widget class="QWidget" name="page_6">
                 <layout class="QVBoxLayout" name="verticalLayout_16">
                  <property name="spacing">
-                  <number>0</number>
+                  <number>20</number>
                  </property>
                  <property name="leftMargin">
                   <number>0</number>
                  </property>
                  <property name="topMargin">
-                  <number>0</number>
+                  <number>20</number>
                  </property>
                  <property name="rightMargin">
                   <number>0</number>
@@ -1183,7 +1321,7 @@
                   <widget class="QLabel" name="label_17">
                    <property name="font">
                     <font>
-                     <family>Arial Black</family>
+                     <family>한컴 고딕</family>
                      <pointsize>18</pointsize>
                      <weight>75</weight>
                      <bold>true</bold>
@@ -1239,13 +1377,13 @@
                <widget class="QWidget" name="page_8">
                 <layout class="QVBoxLayout" name="verticalLayout_11">
                  <property name="spacing">
-                  <number>0</number>
+                  <number>20</number>
                  </property>
                  <property name="leftMargin">
                   <number>0</number>
                  </property>
                  <property name="topMargin">
-                  <number>0</number>
+                  <number>20</number>
                  </property>
                  <property name="rightMargin">
                   <number>0</number>
@@ -1282,9 +1420,22 @@
                    <layout class="QHBoxLayout" name="horizontalLayout_15">
                     <item>
                      <widget class="QComboBox" name="comboBox">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>400</width>
+                        <height>0</height>
+                       </size>
+                      </property>
                       <property name="font">
                        <font>
-                        <pointsize>18</pointsize>
+                        <family>한컴 고딕</family>
+                        <pointsize>24</pointsize>
                        </font>
                       </property>
                      </widget>
@@ -1293,8 +1444,15 @@
                      <widget class="QLineEdit" name="lineEdit">
                       <property name="font">
                        <font>
-                        <pointsize>18</pointsize>
+                        <family>한컴 고딕</family>
+                        <pointsize>24</pointsize>
                        </font>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="placeholderText">
+                       <string>Write down the title of your playlist</string>
                       </property>
                      </widget>
                     </item>
@@ -1305,12 +1463,12 @@
                       </property>
                       <property name="icon">
                        <iconset resource="resources.qrc">
-                        <normaloff>:/Icons/icons/plus.svg</normaloff>:/Icons/icons/plus.svg</iconset>
+                        <normaloff>:/Icons/icons/plus-square.svg</normaloff>:/Icons/icons/plus-square.svg</iconset>
                       </property>
                       <property name="iconSize">
                        <size>
-                        <width>24</width>
-                        <height>24</height>
+                        <width>48</width>
+                        <height>48</height>
                        </size>
                       </property>
                      </widget>
@@ -1322,12 +1480,12 @@
                       </property>
                       <property name="icon">
                        <iconset resource="resources.qrc">
-                        <normaloff>:/Icons/icons/minus.svg</normaloff>:/Icons/icons/minus.svg</iconset>
+                        <normaloff>:/Icons/icons/minus-square.svg</normaloff>:/Icons/icons/minus-square.svg</iconset>
                       </property>
                       <property name="iconSize">
                        <size>
-                        <width>24</width>
-                        <height>24</height>
+                        <width>48</width>
+                        <height>48</height>
                        </size>
                       </property>
                      </widget>
@@ -1368,6 +1526,21 @@
                </widget>
                <widget class="QWidget" name="page_9">
                 <layout class="QVBoxLayout" name="verticalLayout_12">
+                 <property name="spacing">
+                  <number>20</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>20</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
                  <item>
                   <widget class="QLabel" name="label_12">
                    <property name="font">
@@ -1424,6 +1597,21 @@
                </widget>
                <widget class="QWidget" name="page_7">
                 <layout class="QVBoxLayout" name="verticalLayout_10">
+                 <property name="spacing">
+                  <number>20</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>20</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
                  <item>
                   <widget class="QLabel" name="label_10">
                    <property name="font">
@@ -1553,6 +1741,12 @@
                   <layout class="QHBoxLayout" name="horizontalLayout_13">
                    <item>
                     <widget class="QLabel" name="label">
+                     <property name="font">
+                      <font>
+                       <family>한컴 고딕</family>
+                       <pointsize>18</pointsize>
+                      </font>
+                     </property>
                      <property name="text">
                       <string>PlayList</string>
                      </property>
@@ -1697,6 +1891,7 @@
                               <widget class="QLabel" name="label_9">
                                <property name="font">
                                 <font>
+                                 <family>한컴 고딕</family>
                                  <pointsize>9</pointsize>
                                 </font>
                                </property>
@@ -1709,6 +1904,7 @@
                               <widget class="QLabel" name="label_14">
                                <property name="font">
                                 <font>
+                                 <family>한컴 고딕</family>
                                  <pointsize>9</pointsize>
                                 </font>
                                </property>
