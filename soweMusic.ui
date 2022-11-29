@@ -1340,6 +1340,9 @@ QSlider::sub-page:vertical {
                  </item>
                  <item>
                   <widget class="QTableWidget" name="tableWidget">
+                   <property name="showGrid">
+                    <bool>false</bool>
+                   </property>
                    <column>
                     <property name="text">
                      <string>곡</string>
@@ -1495,6 +1498,9 @@ QSlider::sub-page:vertical {
                  </item>
                  <item>
                   <widget class="QTableWidget" name="tableWidget_3">
+                   <property name="showGrid">
+                    <bool>false</bool>
+                   </property>
                    <column>
                     <property name="text">
                      <string>곡</string>
@@ -1561,6 +1567,9 @@ QSlider::sub-page:vertical {
                  </item>
                  <item>
                   <widget class="QTableWidget" name="tableWidget_2">
+                   <property name="showGrid">
+                    <bool>false</bool>
+                   </property>
                    <column>
                     <property name="text">
                      <string>곡</string>
@@ -1636,6 +1645,9 @@ QSlider::sub-page:vertical {
                      <weight>50</weight>
                      <bold>false</bold>
                     </font>
+                   </property>
+                   <property name="showGrid">
+                    <bool>false</bool>
                    </property>
                    <column>
                     <property name="text">

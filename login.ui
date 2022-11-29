@@ -104,6 +104,7 @@ background-color:#EDD478;
         </property>
         <property name="font">
          <font>
+          <family>한컴 고딕</family>
           <pointsize>18</pointsize>
          </font>
         </property>
@@ -122,6 +123,7 @@ background-color:#EDD478;
         </property>
         <property name="font">
          <font>
+          <family>한컴 고딕</family>
           <pointsize>18</pointsize>
          </font>
         </property>
@@ -143,9 +145,10 @@ background-color:#EDD478;
         </property>
         <property name="font">
          <font>
+          <family>한컴 고딕</family>
           <pointsize>20</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
+          <weight>50</weight>
+          <bold>false</bold>
          </font>
         </property>
         <property name="text">
@@ -163,9 +166,10 @@ background-color:#EDD478;
         </property>
         <property name="font">
          <font>
+          <family>한컴 고딕</family>
           <pointsize>12</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
+          <weight>50</weight>
+          <bold>false</bold>
          </font>
         </property>
         <property name="text">
@@ -185,7 +189,7 @@ background-color:#EDD478;
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap resource="resources_login.qrc">:/images/images/sowemusic360.png</pixmap>
+         <pixmap resource="resources_login.qrc">:/images/images/sowemusic1.png</pixmap>
         </property>
        </widget>
       </widget>
@@ -201,6 +205,7 @@ background-color:#EDD478;
         </property>
         <property name="font">
          <font>
+          <family>한컴 고딕</family>
           <pointsize>18</pointsize>
          </font>
         </property>
@@ -219,6 +224,7 @@ background-color:#EDD478;
         </property>
         <property name="font">
          <font>
+          <family>한컴 고딕</family>
           <pointsize>18</pointsize>
          </font>
         </property>
@@ -240,6 +246,7 @@ background-color:#EDD478;
         </property>
         <property name="font">
          <font>
+          <family>한컴 고딕</family>
           <pointsize>18</pointsize>
          </font>
         </property>
@@ -261,9 +268,10 @@ background-color:#EDD478;
         </property>
         <property name="font">
          <font>
+          <family>한컴 고딕</family>
           <pointsize>20</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
+          <weight>50</weight>
+          <bold>false</bold>
          </font>
         </property>
         <property name="text">
@@ -281,11 +289,31 @@ background-color:#EDD478;
         </property>
         <property name="font">
          <font>
+          <family>한컴 고딕</family>
           <pointsize>9</pointsize>
          </font>
         </property>
         <property name="text">
          <string>Go to Login page</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_2">
+        <property name="geometry">
+         <rect>
+          <x>73</x>
+          <y>41</y>
+          <width>431</width>
+          <height>251</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="resources_login.qrc">:/images/images/welcome_sowe.png</pixmap>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </widget>
